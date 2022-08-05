@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+<body>
+
+
+
+
+<script>
+
+    const promise = () => {
+        return new Promise((resolve, reject) => {
+            let request = new XMLHttpRequest();
+            request.open('GET', 'https://api.github.com/users/klarsa');
+            request.send(null);
+
+            request.onreadystatechange = function () {
+                if (request.readyState === 4){
+                    if (request.status === 200){
+                        resolve(JSON.parse(request.responseText));
+                    } else {
+                        reject(request.error);
+                    }
+                }
+            };
+        })
+    };
+
+
+    let dois = promise().then((response) => {
+
+        const { login } = response;
+        console.log(login);
+
+    }).catch((error) =>{
+        console.log(error)
+    });
+
+    console.log("Dois: ", dois)
+
+
+</script>
+</body>
+</html>

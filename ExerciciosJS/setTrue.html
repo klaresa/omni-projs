@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setTrue</title>
+</head>
+<body id="app">
+<button onclick="parando()">Para!</button>
+
+<script>
+    let body = document.getElementById('app');
+
+    let stopEscrever = setInterval(escrever, 1000);
+    let stopRemover = setInterval(remover, 4000);
+
+    function escrever(sim = true) {
+        if (sim) {
+            let text = document.createElement('p');
+            text.setAttribute('id', 'textinho');
+            text.appendChild(document.createTextNode('Texto'));
+            body.appendChild(text);
+        } else {
+            console.log('sou falso');
+            //document.getElementById('textinho').remove();
+        }
+    }
+
+    function remover() {
+        let remove = document.querySelectorAll('#textinho');
+        console.log(remove);
+
+        for (item of remove) {
+            item.remove();
+        }
+    }
+
+    function parando() {
+        clearInterval(stopEscrever);
+        clearInterval(stopRemover);
+        escrever(false);
+        console.log('parei')
+    }
+
+    setTimeout(parando, 10000);
+
+
+    setTimeout(escrever, 20000)
+
+</script>
+</body>
+</html>

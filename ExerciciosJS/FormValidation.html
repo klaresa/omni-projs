@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+</head>
+<body>
+Form Validation
+<form id="form">
+    <input type="text" placeholder="Entre..">
+    <input type="checkbox" id="check" checked>
+    <button onclick="ler()">OK!</button>
+
+</form>
+<script>
+    let objeto = [];
+
+    let form = document.querySelector('#form');
+
+
+    function ler() {
+        let checkbox = document.querySelector("[type=checkbox]");
+        let input = document.querySelector("[type=text]");
+
+        objeto.input = input.value;
+        objeto.checkbox = checkbox.checked;
+
+        console.log(objeto);
+        event.preventDefault()
+    }
+
+    var element = {}, cart = [];
+    element.id = "id";
+    element.quantity = "quantity";
+    cart.push(element);
+
+    var el = {}, cart1 = [];
+    el.id = "id";
+    el.quantity = "quantity";
+    cart1.push({qqqqq: el});
+
+
+
+    console.log("car", cart);
+    console.log("car1", cart1);
+
+    console.log(cart[0].id);
+    console.log(cart1[0].qqqqq.id);
+
+    // let um = JSON.stringify(cart1);
+    //
+    // let dois = JSON.parse(um);
+    // console.log(dois[0].qqqqq);
+
+    var lis = {};
+
+    function addLis(lis, el) {
+        return Object.assign(lis, el);
+    }
+
+    // addLis(lis, el);
+
+    var oi = {};
+    oi.ere = "eeee";
+    oi.erer = "iiii";
+
+    addLis(lis, {oi});
+    addLis(lis, {el});
+
+let um = JSON.stringify(lis);
+
+    console.log("lis", um);
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+    <style>
+         div p:first-child{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+<div>Lista 1
+    <ul id="lista1"></ul>
+</div>
+
+
+<div ondragover='onDragOver(event);' ondrop='onDrop(event);'>
+      dropzone
+  </div>
+
+<script>
+    let ul1 = document.querySelector('#lista1');
+
+    let lista1 = ["um", "dois", "tres"];
+
+    for (let item of lista1){
+        let li = document.createElement('li');
+        li.setAttribute('ondragstart', 'onDragStart(event)');
+        li.setAttribute('id', 'draggableSpan');
+        li.setAttribute('draggable', 'true');
+        li.appendChild(document.createTextNode(item));
+        ul1.appendChild(li);
+    }
+
+
+    function onDragStart(event) {
+        event
+            .dataTransfer
+            .setData('text/plain', event.target.id);
+        event
+            .currentTarget
+            .style
+            .backgroundColor = 'yellow';
+    }
+
+    function onDragOver(event) {
+        event.preventDefault();
+    }
+
+    function onDrop(event) {
+        const id = event.dataTransfer.getData('text');
+
+        const draggableElement = document.getElementById(id);
+        const dropzone = event.target;
+
+        dropzone.appendChild(draggableElement);
+
+        event.dataTransfer.clearData();
+    }
+
+</script>
+</body>
+</html>

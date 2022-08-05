@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Metodos Array</title>
+</head>
+<body>
+
+
+<script>
+    let arr = [1,2,5,4,7,6,0];
+
+    const arrMap = arr.map((item)=> {
+        return item * 2;
+    });
+
+    console.log(arrMap);
+
+    let arrReduce = arr.reduce((total, next) =>{
+        return total + next;
+    });
+
+    console.log(arrReduce);
+
+    let arrFilter = arr.filter((item)=>{
+        return item % 2 === 0;
+    });
+    console.log(arrFilter);
+
+    let arrFind = arr.find((item) => {
+        return item === 6;
+    });
+
+    console.log(arrFind);
+
+</script>
+</body>
+</html>

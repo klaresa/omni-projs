@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Velocidade</title>
+</head>
+<body>
+<input type="number" id="inputVel" onkeyup="verificar()">
+<input type="button" value="Verificar!" >
+<div id="res"></div>
+
+<script>
+    function verificar() {
+        var vel = document.querySelector('input#inputVel');
+
+        var velo = Number(vel.value);
+
+        // if (velo > 80){
+        //     res.innerHTML += `<p>Sua velocidade: ${velo}km/h.</p>`;
+        //     res.innerHTML += `<p>Multadinho!</p>`
+        // } else {
+        //     res.innerHTML +=`<p>Siga!</p>`
+        // }
+        res.innerHTML = `${vel.value}`;
+
+    }
+</script>
+</body>
+</html>

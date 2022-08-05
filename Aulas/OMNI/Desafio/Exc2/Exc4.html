@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="minhaDiv">
+    <h1>Minha Lista</h1>
+    <ul id="lista"></ul>
+</div>
+<input required type="text" name="nome">
+<button onClick="adicionar()">Adicionar</button>
+
+<script>
+    let minhaDiv = document.querySelector('#minhaDiv');
+    var nomes = ["Diego", "Gabriel", "Lucas"];
+    var lista = document.getElementById('lista');
+    var body = document.getElementsByTagName('body');
+
+    body.onload = loading();
+
+    function loading(){
+        for (let item of nomes){
+            let vari = document.createElement('li');
+             vari.setAttribute('id', item.toString());
+             let nome = document.createTextNode(item.toString());
+             vari.appendChild(nome);
+             lista.appendChild(vari);
+        }
+    }
+
+    //let btn = document.getElementsByTagName('button');
+    //btn.addEventListener("click", "adicionar");
+    // no mesmo doc ela funciona sem addeventlistener
+
+    function adicionar() {
+        let nome = document.getElementsByName('nome')[0];
+        let aviso = document.createElement('p');
+        aviso.setAttribute('id', 'avisoo');
+        let avisoTxt = document.createTextNode('Adicione um nome!');
+
+        aviso.appendChild(avisoTxt);
+        if (nome.value != '') {
+            lista.innerHTML = '';
+            nomes.push(nome.value);
+            nome.value = '';
+
+            // acha e apaga todos os elementos de id avisoo
+            let novo = document.querySelectorAll("p#avisoo");
+            for (let item of novo){
+                item.remove()
+            }
+            loading()
+        } else {
+            minhaDiv.appendChild(aviso);
+        }
+
+    }
+        // FUNCIONA MAS ADICIONA A DIV AO FINAL DO SCRIPT
+        // var body = document.querySelector('body');
+        // var umaDiv = document.createElement('div');
+        // umaDiv.setAttribute('id', 'minhaDiv');
+        // var msg = document.createTextNode('OLA!');
+        // umaDiv.appendChild(msg);
+        // body.appendChild(umaDiv);
+        // console.log(umaDiv);
+
+
+        // // cria o input, adiciona atributos e adiciona como filho na minhaDiv
+        // let input = document.createElement('input');
+        // input.setAttribute('type', 'text');
+        // input.setAttribute('name', 'nome');
+        // minhaDiv.appendChild(input);
+        //
+        // // cria o botao, adiciona atributos, da um texto para o botao,
+        // // adiciona o texto ao botao
+        // // e adiciona o botao finalizado como filho a minhaDiv
+        // let btn = document.createElement('button');
+        // btn.setAttribute('onClick', 'adicionar()');
+        // let btntext = document.createTextNode('Botao');
+        // btn.appendChild(btntext);
+        // minhaDiv.appendChild(btn);
+
+
+        // adicionar a lista do exercicio anterior
+        // fazer a funcao adicionar
+            // renderiza o nome a lista LI
+            // apaga o conteudo do input
+
+        // var lista = document.getElementById('lista');
+        //
+        // lista.onclick = function () {
+        //     lista.innerText = "Clicou!!!";
+        //
+        //     for (let item of nomes){
+        //         // cria o elemento LI dentro do UL
+        //         let vari = document.createElement('li');
+        //
+        //         // adiciona o id e o valor do ID
+        //         vari.setAttribute('id', item.toString());
+        //
+        //         // cria um texto com o valor de cada nome
+        //         let nome = document.createTextNode(item.toString());
+        //
+        //         // o elemento adiciona o texto com o nome
+        //         vari.appendChild(nome);
+        //
+        //         // o elemento lista adiciona a LI ao UL
+        //         lista.appendChild(vari);
+        //     }
+
+</script>
+</body>
+</html>

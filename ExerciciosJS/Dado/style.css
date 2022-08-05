@@ -1,0 +1,33 @@
+
+#quadrado{
+    width: 200px;
+    height: 200px;
+    background: #808080;
+    box-shadow: 2px 2px 5px rgba(0,0,0,.05), 2px 2px 5px rgba(0,0,0,.1);
+    border-radius: 10px;
+    transition: 1.0s;
+    transform: rotateX(240deg) rotateY(-5deg) rotateZ(-155deg);
+}
+
+div #virar  {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 170px;
+    text-align: center;
+}
+
+#container{
+    padding-top: 100px;
+    width: 50%;
+    top: 50%;
+    margin: auto;
+}
+
+#virar{
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: #dd0a31;
+    box-shadow: 2px 2px 5px rgba(77, 77, 77, 0.17), 2px 2px 5px rgba(0, 0, 0, 0.36);
+    transition: 1.0s;
+    transform: perspective(200px);
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 10 - Exc 07</title>
+    <style>
+        div#res{
+            font: normal 18px Arial;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h1>Somando Valores</h1>
+    <input type="number" id="textN1"> +
+    <input type="number" id="textN2">
+    <input type="button" value="Somar!" id="somar" onclick="somar()">
+    <div id="res">Resultado:</div>
+</div>
+
+<script>
+    function somar() {
+        // pega os elementos do html
+        var inputN1 = window.document.getElementById('textN1');
+        var inputN2 = window.document.querySelector('input#textN2');
+        var res = window.document.getElementById('res');
+
+        // pega o valor dos elementos
+        var n1 = Number(inputN1.value);
+        var n2 = Number(inputN2.value);
+
+        // soma
+        var s = n1 + n2;
+
+        // reescreve o conteudo do div res com o resultado da soma
+        res.innerHTML = `O resultado de ${n1} + ${n2}: <strong>${s}</strong>`;
+    }
+</script>
+
+</body>
+</html>

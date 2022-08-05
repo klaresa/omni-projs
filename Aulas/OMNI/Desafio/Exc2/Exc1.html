@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exc 1</title>
+</head>
+<body>
+
+<div id="container">
+    <input type="button" id="btn" value="add!">
+</div>
+
+
+<script>
+
+    var btn = document.getElementById('btn');
+
+    btn.onclick = function () {
+        var container = document.getElementById('container');
+
+        var elemento = document.createElement('div');
+        elemento.setAttribute('class', 'elemento');
+        container.appendChild(elemento);
+
+        elemento.style.background = 'red';
+        elemento.style.width = "50px";
+        elemento.style.height = "50px";
+        elemento.style.margin = "1px";
+    };
+
+    btn.onmouseover = function () {
+        console.log('oi');
+    };
+
+    function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+
+
+</script>
+</body>
+</html>

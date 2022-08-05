@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desestruturação</title>
+</head>
+<body>
+<button onclick="mostrar()">Show me!</button>
+
+<script>
+    var usuario = {
+        nome: "Clara",
+        endereco: {
+            rua: "Senador Salgado",
+            cidade: "Rio",
+            estado: "RJ"
+        }
+    };
+
+    function mostrar() {
+        let {nome, endereco: {cidade}} = usuario;
+
+        document.querySelector('body').innerHTML += `<br> ${cidade}`;
+        console.log(cidade);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>imhotep</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1, // ocupa a tela toda
+    backgroundColor: '#fafafa',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  
+  // o ReactNative nao tem heranca de elementos, portanto cada elemento precisa 
+  // ter sua propria estilizacao!
+  title: {
+    fontWeight: "bold",
+    fontSize: 32,
+    color: '#999',
+  }
+});

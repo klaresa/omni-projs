@@ -1,0 +1,26 @@
+body{
+    background: #93a7cd;
+    font: normal 16px Arial;
+}
+
+header{
+    color: white;
+    text-align: center;
+}
+
+section{
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+}
+
+footer{
+    text-align: center;
+    color: white;
+}
+
+div{
+    padding: 5px;
+}

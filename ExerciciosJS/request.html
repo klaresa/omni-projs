@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button onclick="executaPromise()">Request</button>
+
+<script>
+
+    // let request = () => {
+    //     return new Promise((resolve, reject)  => {
+    //     })};
+
+
+    let request = function () {
+        return new Promise(function (resolve, reject) {
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://api.github.com/users/klaresa');
+            xhr.send();
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        resolve(JSON.parse(xhr.responseText));
+                    } else {
+                        reject('erro');
+                    }
+                }
+            }
+        });
+    };
+
+    // PROMISE COM THEN E CATCH
+
+    // request().then(function (response) {
+    //     let { login, id, url } = response;
+    //     console.log(`${login}, \n${id}, \n${url}`);
+    // }).catch(function (error) {
+    //     console.log(error)
+    // });
+
+
+    // PROMISE COM ASYNC FUNCTION E AWAIT RESPONSE
+    // async function executaPromise() {
+    //     const resposta = await request();
+    //     let body = document.querySelector('body');
+    //     body.innerHTML = resposta.login;
+    //     console.log(resposta);
+    // }
+
+    // FUNCAO ANONIMA DE PROMISE COM ASYNC FUNCTION E AWAIT RESPONSE
+    const executaPromise = async () => {
+        const resposta = await request();
+        let body = document.querySelector('body');
+        body.innerHTML = resposta.login;
+        console.log(resposta);
+    };
+
+
+    let esperar = () => console.log("ok");
+
+esperar()
+
+</script>
+</body>
+</html>

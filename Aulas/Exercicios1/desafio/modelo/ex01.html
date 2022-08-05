@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lista</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header>
+<h1>lista</h1>
+</header>
+
+<section>
+    <div>
+        Numero (entre 1 a 100):
+        <input type="number" id="num">
+        <input type="button" id="add" onclick="add(num)" value="add!">
+    </div>
+
+    <div>
+        <select id="lista" size="10">
+            <option>Adicione um numero acima!</option>
+        </select>
+    </div>
+
+    <div>
+        <input id="finalizar" type="button" value="finalizar!" onclick="finalizar()">
+    </div>
+
+    <div id="res"></div>
+
+</section>
+
+<footer>
+    <p>&copy waaa</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

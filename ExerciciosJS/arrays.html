@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+</head>
+<body>
+
+<!--Arrays-->
+
+<script>
+    let lista = [0, 2, 3, 5, 11];
+    console.log("inicial: ", lista);
+
+    lista.unshift(7);
+    console.log("Unshift: ", lista);
+
+    lista.push(1);
+    console.log("Push: ", lista);
+
+    lista.shift();
+    console.log("Shift: ", lista);
+
+    lista.sort();
+    console.log("Ordernar: ", lista);
+
+    lista.sort((a, b) => a-b);
+    console.log("Ordernar numeros: ", lista);
+
+    lista2 = [];
+    lista.forEach((item)=> {
+        item = item * 2;
+        lista2.push(item);
+        return item;
+    });
+    console.log(lista2);
+</script>
+</body>
+</html>

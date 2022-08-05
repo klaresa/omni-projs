@@ -1,0 +1,33 @@
+ul{
+    padding-inline-start: 0;
+}
+
+#app{
+    background-color: rgb(251, 251, 251);
+    text-align: center;
+    padding: 5px;
+}
+
+li{
+    color: #43adda;
+    list-style: none;
+    background: rgba(255, 255, 255, 0.91);
+    padding: 5px;
+    margin-bottom: 3px;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 16px;
+    border: 1px dashed rgba(147, 167, 205, 0.31);
+
+}
+
+a{
+    text-decoration: none;
+    font-size: 10px;
+    color: #858585;
+    float: right;
+    line-height: 12px;
+    background: rgba(243, 245, 245, 0.65);
+    padding: 3px;
+    border-radius: 4px;
+}

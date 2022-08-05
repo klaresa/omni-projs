@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exc 2</title>
+</head>
+<body>
+<ul id="lista">Me clica!
+</ul>
+
+<script>
+    var nomes = ["Diego", "Gabriel", "Lucas"];
+    var lista = document.getElementById('lista');
+
+    lista.onclick = function () {
+        lista.innerText = "Clicou!!!";
+
+        for (let item of nomes){
+            // cria o elemento LI dentro do UL
+            let vari = document.createElement('li');
+
+            // adiciona o id e o valor do ID
+            vari.setAttribute('id', item.toString());
+
+            // cria um texto com o valor de cada nome
+            let nome = document.createTextNode(item.toString());
+
+            // o elemento adiciona o texto com o nome
+            vari.appendChild(nome);
+
+            // o elemento lista adiciona a LI ao UL
+            lista.appendChild(vari);
+        }
+    };
+
+
+</script>
+</body>
+</html>
